@@ -22,7 +22,7 @@ module.exports = {
     plugins: ['babel-plugin-macros'],
   },
   style: {
-    postcss: {
+    postcssOptions: {
       plugins: [require('tailwindcss'), require('autoprefixer')],
     },
   },
