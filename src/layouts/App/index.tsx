@@ -12,7 +12,7 @@ const AuthCheck: FC = ({ children }) => {
 
 const App = () => {
   const RouteElement = useRoutes([
-    { path: HOME.default.path, element: <Navigate to={HOME.default.redirect} /> },
+    { path: HOME.default.path, element: <HOME.default.element /> },
     { path: LOGIN.default.path, element: <LOGIN.default.element /> },
   ]);
 

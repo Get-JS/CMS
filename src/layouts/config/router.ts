@@ -4,7 +4,7 @@ import loadable from '@loadable/component';
 export const HOME = {
   default: {
     path: '/',
-    redirect: '/login',
+    element: loadable(() => import('@/pages/Home')),
     url: () => {
       return `${HOME.default.path}`;
     },
