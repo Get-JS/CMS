@@ -19,7 +19,7 @@ module.exports = {
         },
       ],
     ],
-    plugins: ['babel-plugin-macros'],
+    plugins: ['babel-plugin-twin', 'babel-plugin-macros'],
   },
   style: {
     postcssOptions: {

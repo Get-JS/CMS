@@ -44,6 +44,7 @@
     "source.organizeImports": false,
     "source.fixAll.eslint": true
   },
+  "tailwindcss.jsxPropImportChecking": false,
   "cSpell.words": [
     "cssprop",
     "gitdog",
