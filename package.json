@@ -32,7 +32,8 @@
     "eject": "react-scripts eject",
     "eslint:fix": "npx eslint --fix ./src/**",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "watch": "nodemon -x npm run start -w tailwind.config.js"
   },
   "eslintConfig": {
     "extends": [
@@ -86,6 +87,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "nodemon": "^2.0.15",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
