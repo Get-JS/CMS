@@ -12,7 +12,6 @@ const customStyles = css([
       lineHeight: 1.4,
       fontWeight: 500,
       overflowX: 'hidden',
-      marginBottom: 72,
     },
   },
   {
