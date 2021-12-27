@@ -1,12 +1,27 @@
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
 
-import Header from '@/components/Header';
+import { useLocation } from 'react-router-dom';
+
+import Navbar from '@/components/Navbar';
+import { getActiveMenuList } from '@/utils/menu';
+
+import { menuFlattenList } from '../config/menu';
 
 const BaseLayout: FC = ({ children }) => {
+  const location = useLocation();
+
+  const menuList = menuFlattenList;
+  const menuDepth1 = useMemo(() => menuList.filter((menu) => menu.show && menu.depth === 1), [menuList]);
+  const activeMenuList = useMemo(() => getActiveMenuList(menuList, location.pathname), [location.pathname, menuList]);
+  const activeId = useMemo(
+    () => activeMenuList.find((activeMenu) => activeMenu.depth === 1)?.menuId || '',
+    [activeMenuList],
+  );
+
   return (
     <>
-      <Header />
-      {children}
+      <div tw="mb-72">{children}</div>
+      <Navbar menuList={menuDepth1} activeId={activeId} />
     </>
   );
 };
