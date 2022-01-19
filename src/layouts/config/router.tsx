@@ -1,14 +1,8 @@
 import loadable from '@loadable/component';
-import { route } from 'route-type-safe';
+
+import { routes } from './routes';
 
 const Home = loadable(() => import('@/pages/Home'));
-
-export const routes = {
-  HOME: route({ path: '/' }),
-  ISSUE: route({ path: '/issue' }),
-  LIKE: route({ path: '/like' }),
-  MORE: route({ path: '/more' }),
-};
 
 // [page] HOME
 export const HOME = {
