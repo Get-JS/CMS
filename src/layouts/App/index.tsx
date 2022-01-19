@@ -1,20 +1,16 @@
-/* eslint-disable react/jsx-pascal-case */
 import { FC } from 'react';
 
-import { Navigate, useRoutes } from 'react-router-dom';
+import { useRoutes } from 'react-router-dom';
 import { SWRConfig } from 'swr';
 
-import { HOME, LOGIN } from '../config/router';
+import routeInfo from '../config/router';
 
 const AuthCheck: FC = ({ children }) => {
   return <>{children}</>;
 };
 
 const App = () => {
-  const RouteElement = useRoutes([
-    { path: HOME.default.path, element: <HOME.default.element /> },
-    { path: LOGIN.default.path, element: <LOGIN.default.element /> },
-  ]);
+  const RouteElement = useRoutes(routeInfo);
 
   return (
     <SWRConfig
