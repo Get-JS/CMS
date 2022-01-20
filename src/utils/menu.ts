@@ -1,27 +1,28 @@
 import { menuCheck, MenuType } from '@/layouts/config/menu';
 
-export function getCurrentMenu(menuList: MenuType[], pathname: string): MenuType | undefined {
-  const programType = pathname.split('/')[1];
+import allEqual from './allEqual';
+
+export function getCurrentMenu(menuList: MenuType[], currentUrl: string): MenuType | undefined {
+  const programType = currentUrl.split('/')[1];
   const programPattern = programType ? menuCheck[programType] : { exact: true };
   if (!programPattern) return undefined;
 
   const findCurrentMenuList = menuList.filter((menuItem) => {
-    if (programPattern.exact) return pathname === menuItem.url;
-    return [menuItem.url, pathname]
-      .map((url) =>
-        url
-          .split('/')
-          .splice(1, programPattern.pathRange as number)
-          .join('/'),
-      )
-      .every((pathRange, _i, pathRangeList) => pathRange === pathRangeList[0]);
+    if (programPattern.exact) return currentUrl === menuItem.url;
+    const compUrlList = [menuItem.url, currentUrl].map((url) =>
+      url
+        .split('/')
+        .splice(1, programPattern.pathRange as number)
+        .join('/'),
+    );
+    return allEqual(compUrlList);
   });
 
   return findCurrentMenuList[findCurrentMenuList.length - 1] || undefined;
 }
 
-export function getActiveMenuList(menuList: MenuType[], pathname: string) {
-  const currentMenuFind = getCurrentMenu(menuList, pathname);
+export function getActiveMenuList(menuList: MenuType[], currentUrl: string) {
+  const currentMenuFind = getCurrentMenu(menuList, currentUrl);
   if (!currentMenuFind) return [];
   const activeMenuList = [];
   let findMenu: MenuType | undefined = currentMenuFind;
