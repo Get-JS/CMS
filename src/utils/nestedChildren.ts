@@ -5,18 +5,18 @@ import _cloneDeep from 'lodash-es/cloneDeep';
  * @param list flatten list
  * @param currentKeyName
  * @param parentKeyName
- * @param childrenKeyName make the nestedChildren key name
- * @param parentValue
+ * @param childrenKeyName add the nestedChildren 'key name'
+ * @param parentValue to check current parentValue of obj === parameter parentValue (obj[parentKeyName] === parentValue)
  */
 
-export default function nestedChildren<T extends Record<string, any>, P>(
+export default function nestedChildren<T extends Record<string | K, any>, P, K extends keyof any>(
   list: T[],
   currentKeyName: string,
   parentKeyName: string,
-  childrenKeyName: string,
+  childrenKeyName: K,
   parentValue: P,
-): T[] {
-  const out: T[] = [];
+) {
+  const out: (T & Record<K, T[]>)[] = [];
   list.forEach((data) => {
     const cloneData = _cloneDeep(data);
     if (cloneData[currentKeyName] && cloneData[parentKeyName] === parentValue) {
