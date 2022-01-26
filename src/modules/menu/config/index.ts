@@ -1,24 +1,11 @@
 import flatten from '@/utils/flatten';
 
+import { MenuType, ProgramPattern } from '../@types';
+
 import 홈아이콘이미지 from '@images/icon/cover.svg';
 import 이슈아이콘이미지 from '@images/icon/issue.svg';
 import 좋아요아이콘이미지 from '@images/icon/like.svg';
 import 더보기아이콘이미지 from '@images/icon/more.svg';
-
-export type MenuType = {
-  url: string;
-  menuId: string;
-  parentMenuId: string;
-  menuType: 'text' | 'icon' | 'button';
-  menuName: string;
-  menuIcon: string;
-  depth: number;
-  pageDescription: string;
-  target: boolean;
-  show: boolean;
-  ord: number;
-  subMenuList: MenuType[] | [];
-};
 
 const DEPTH1_1 = {
   url: '/',
@@ -82,13 +69,6 @@ const DEPTH1_4 = {
 
 export const menuList = [DEPTH1_1, DEPTH1_2, DEPTH1_3, DEPTH1_4] as MenuType[];
 export const menuFlattenList = flatten(menuList, 'subMenuList') as MenuType[];
-
-type ProgramPattern = {
-  [key: string]: {
-    exact: boolean;
-    pathRange?: number;
-  };
-};
 
 export const menuCheck: ProgramPattern = {
   issue: {

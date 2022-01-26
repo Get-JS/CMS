@@ -1,6 +1,6 @@
-import { menuCheck, MenuType } from '@/layouts/config/menu';
-
-import allEqual from './allEqual';
+import { MenuType } from '@/modules/menu/@types';
+import { menuCheck } from '@/modules/menu/config';
+import allEqual from '@/utils/allEqual';
 
 export function getCurrentMenu(menuList: MenuType[], currentUrl: string): MenuType | undefined {
   const programType = currentUrl.split('/')[1];
