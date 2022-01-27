@@ -4,8 +4,7 @@ import allEqual from '@/utils/allEqual';
 
 function getCurrentMenu(menuList: MenuType[], currentUrl: string, programPatternCheck: ProgramPattern) {
   const program = currentUrl.split('/')[1];
-  const programPattern = program ? programPatternCheck[program] : { exact: true };
-  if (!programPattern) return undefined;
+  const programPattern = programPatternCheck[program] || { exact: true };
 
   const findCurrentMenuList = menuList.filter((menuItem) => {
     if (programPattern.exact) return currentUrl === menuItem.url;
