@@ -4,7 +4,7 @@ export type MenuType = {
   parentMenuId: string;
   menuType: 'text' | 'icon' | 'button';
   menuName: string;
-  menuIcon: string;
+  menuIcon?: string;
   depth: number;
   pageDescription: string;
   target: boolean;

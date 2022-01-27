@@ -11,7 +11,7 @@ export interface Props {
     parentMenuId: string;
     menuType: 'text' | 'icon' | 'button';
     menuName: string;
-    menuIcon: string;
+    menuIcon?: string;
     target: boolean;
   }[];
   activeId: string;
