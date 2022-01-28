@@ -26,4 +26,13 @@ module.exports = {
       plugins: [require('tailwindcss'), require('autoprefixer')],
     },
   },
+  jest: {
+    configure: (jestConfig, { env, paths, resolve, rootDir }) => {
+      jestConfig.transformIgnorePatterns = [
+        '<rootDir>/node_modules/(?!lodash-es)',
+        '^.+\\.module\\.(css|sass|scss)$',
+      ];
+      return jestConfig;
+    },
+  },
 };
