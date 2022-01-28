@@ -1,12 +1,20 @@
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
 
-import Header from '@/components/Header';
+import Navbar from '@/components/Navbar';
+import { useActiveMenuList, useMenuList } from '@/modules/menu';
 
 const BaseLayout: FC = ({ children }) => {
+  const menuDepth1List = useMenuList(1);
+  const activeMenuList = useActiveMenuList();
+  const activeId = useMemo(
+    () => activeMenuList.find((activeMenu) => activeMenu.depth === 1)?.menuId || '',
+    [activeMenuList],
+  );
+
   return (
     <>
-      <Header />
-      {children}
+      <div tw="mb-72">{children}</div>
+      <Navbar menuList={menuDepth1List} activeId={activeId} />
     </>
   );
 };

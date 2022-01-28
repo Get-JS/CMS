@@ -8,6 +8,8 @@
       "esnext"
     ],
     "allowJs": true,
+    "downlevelIteration": true,
+    "importHelpers": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -22,10 +24,11 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "src/typings/*",
   ],
   "typeRoots": [
     "node_modules/@types",
-    "custom_typings/"
+    "src/typings/*",
   ]
 }
