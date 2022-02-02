@@ -3,6 +3,7 @@ import loadable from '@loadable/component';
 import { routes } from './routes';
 
 const Home = loadable(() => import('@/pages/Home'));
+const Issue = loadable(() => import('@/pages/Issue'));
 
 // [page] HOME
 export const HOME = {
@@ -13,7 +14,7 @@ export const HOME = {
 // [page] ISSUE
 export const ISSUE = {
   path: routes.ISSUE.path,
-  element: <Home />,
+  element: <Issue />,
 };
 
 // [page] LIKE
