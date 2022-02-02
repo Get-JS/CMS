@@ -34,6 +34,10 @@ const customStyles = css([
       h2 {
         font-size: 24px;
       }
+
+      sup {
+        top: -1rem;
+      }
     `,
   },
 ]);

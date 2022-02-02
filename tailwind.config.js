@@ -28,9 +28,20 @@ module.exports = {
             transform: 'translateY(0)',
           },
         },
+        'fade-in-right': {
+          from: {
+            opacity: 0,
+            transform: 'translateX(30px) scaleX(1.1)',
+          },
+          to: {
+            opacity: 1,
+            transform: 'translateX(0)',
+          },
+        },
       },
       animation: {
         'fade-in-up-aqua': 'fade-in-up-aqua 0.5s both',
+        'fade-in-right': 'fade-in-right 1s cubic-bezier(0.19, 1, 0.22, 1) both',
       },
     },
   },
