@@ -1,15 +1,8 @@
-import { useLocation } from 'react-router-dom';
-
 import BaseLayout from '@/layouts/BaseLayout';
-import { routes } from '@/layouts/config/routes';
 
 import { animationSlideDown, circle, line } from './styles';
 
 const Home = () => {
-  const psHash = routes.ISSUE.parseHash(useLocation());
-  if (psHash === '') {
-    console.log('psHash :>> ', psHash === '');
-  }
   return (
     <BaseLayout>
       <div
@@ -46,7 +39,7 @@ const Home = () => {
           tw="bg-transparent border-[1px] border-solid border-[rgba(0, 0, 0, 0.2)] absolute animation-delay[0.1s]"
         />
         <div css={circle} tw="bg-yellow-400 absolute left-[82px] animation-delay[0.2s]" />
-        <div css={circle} tw="bg-yellow-300 absolute left-[164px] top-0 animation-delay[0.3s]" />
+        <div css={circle} tw="bg-yellow-300 absolute left-[164px] animation-delay[0.3s]" />
       </div>
     </BaseLayout>
   );
