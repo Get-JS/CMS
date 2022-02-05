@@ -21,18 +21,3 @@ export const circle = css`
 `;
 
 export const line = tw`w-[46px] h-[1px] inline-block bg-yellow-200 opacity-20`;
-
-const slideDown = keyframes`
-  from {
-    transform: translateY(-60px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-`;
-export const animationSlideDown = css`
-  animation: ${slideDown} 0.5s both;
-`;

@@ -25,13 +25,13 @@ const Issue = () => {
       </div>
 
       <ul tw="flex overflow-x-scroll p-[24px] pb-[7px]">
-        <li tw="mr-[10px] animate-fade-in-right animation-delay[0.07s]">
+        <li tw="mr-[10px] animate-fade-in-left animation-delay[0.07s]">
           <img tw="w-[136px] h-[80px] object-cover object-center border-radius[5px]" src={issue1Img} alt="" />
         </li>
-        <li tw="mr-[10px] animate-fade-in-right animation-delay[0.14s]">
+        <li tw="mr-[10px] animate-fade-in-left animation-delay[0.14s]">
           <img tw="w-[136px] h-[80px] object-cover object-center border-radius[5px]" src={issue2Img} alt="" />
         </li>
-        <li tw="mr-[10px] animate-fade-in-right animation-delay[0.21s]">
+        <li tw="mr-[10px] animate-fade-in-left animation-delay[0.21s]">
           <img tw="w-[136px] h-[80px] object-cover object-center border-radius[5px]" src={issue3Img} alt="" />
         </li>
       </ul>

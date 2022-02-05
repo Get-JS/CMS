@@ -1,14 +1,11 @@
 import BaseLayout from '@/layouts/BaseLayout';
 
-import { animationSlideDown, circle, line } from './styles';
+import { circle, line } from './styles';
 
 const Home = () => {
   return (
     <BaseLayout>
-      <div
-        css={animationSlideDown}
-        tw="bg-yellow-400 w-[56px] h-[56px] text-secondary ml-[24px] pl-[13px] pt-[18px] text-[9px] leading-[11px] font-bold fixed top-0 right-[24px]"
-      >
+      <div tw="bg-yellow-400 w-[56px] h-[56px] text-secondary ml-[24px] pl-[13px] pt-[18px] text-[9px] leading-[11px] font-bold fixed top-0 right-[24px] animate-slide-down">
         Ex- <br />
         publ
       </div>
