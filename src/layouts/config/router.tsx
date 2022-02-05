@@ -4,6 +4,7 @@ import { routes } from './routes';
 
 const Home = loadable(() => import('@/pages/Home'));
 const Issue = loadable(() => import('@/pages/Issue'));
+const Like = loadable(() => import('@/pages/Like'));
 
 // [page] HOME
 export const HOME = {
@@ -20,7 +21,7 @@ export const ISSUE = {
 // [page] LIKE
 export const LIKE = {
   path: routes.LIKE.path,
-  element: <Home />,
+  element: <Like />,
 };
 
 // [page] MORE
