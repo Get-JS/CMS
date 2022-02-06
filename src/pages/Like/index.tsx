@@ -33,8 +33,8 @@ const Like = () => {
       </div>
 
       <div tw="m-[24px] mt-[124px] mb-[12px]">
-        <h1 tw="animate-fade-in-up-aqua">Likes 72</h1>
-        <div tw="mt-[12px] animate-fade-in-up-aqua">
+        <h1 tw="animate-fade-in-up-aqua animation-delay[0.07s]">Likes 72</h1>
+        <div tw="mt-[12px] animate-fade-in-up-aqua animation-delay[0.14s]">
           We’ll make a mobile magazine app
           <br />
           using html, css only.
@@ -42,23 +42,23 @@ const Like = () => {
       </div>
 
       <ul tw="grid grid-template-columns[1fr 1fr] grid-auto-rows[148px] grid-column-gap[17px] grid-row-gap[18px] p-[24px]">
-        <li tw="h-auto border-radius[5px] animate-fade-in-up-aqua">
-          <img tw="object-cover object-center w-full h-[148px]" src={likes1Img} alt="" />
+        <li tw="animate-fade-in-up-aqua animation-delay[0.07s]">
+          <img tw="border-radius[5px] object-cover object-center w-full h-[148px]" src={likes1Img} alt="" />
         </li>
-        <li tw="border-radius[5px] animate-fade-in-up-aqua">
-          <img tw="object-cover object-center w-full h-[148px]" src={likes2Img} alt="" />
+        <li tw="animate-fade-in-up-aqua animation-delay[0.14s]">
+          <img tw="border-radius[5px] object-cover object-center w-full h-[148px]" src={likes2Img} alt="" />
         </li>
-        <li tw="border-radius[5px] animate-fade-in-up-aqua">
-          <img tw="object-cover object-center w-full h-[148px]" src={likes3Img} alt="" />
+        <li tw="animate-fade-in-up-aqua animation-delay[0.21s]">
+          <img tw="border-radius[5px] object-cover object-center w-full h-[148px]" src={likes3Img} alt="" />
         </li>
-        <li tw="border-radius[5px] animate-fade-in-up-aqua">
-          <img tw="object-cover object-center w-full h-[148px]" src={likes4Img} alt="" />
+        <li tw="animate-fade-in-up-aqua animation-delay[0.28s]">
+          <img tw="border-radius[5px] object-cover object-center w-full h-[148px]" src={likes4Img} alt="" />
         </li>
-        <li tw="border-radius[5px] animate-fade-in-up-aqua">
-          <img tw="object-cover object-center w-full h-[148px]" src={likes1Img} alt="" />
+        <li tw="animate-fade-in-up-aqua animation-delay[0.35s]">
+          <img tw="border-radius[5px] object-cover object-center w-full h-[148px]" src={likes1Img} alt="" />
         </li>
-        <li tw="border-radius[5px] animate-fade-in-up-aqua">
-          <img tw="object-cover object-center w-full h-[148px]" src={likes2Img} alt="" />
+        <li tw="animate-fade-in-up-aqua animation-delay[0.40s]">
+          <img tw="border-radius[5px] object-cover object-center w-full h-[148px]" src={likes2Img} alt="" />
         </li>
       </ul>
     </BaseLayout>
