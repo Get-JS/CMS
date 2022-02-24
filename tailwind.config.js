@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable import/no-extraneous-dependencies */
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false,
@@ -6,6 +10,14 @@ module.exports = {
       colors: {
         primary: '#485861',
         secondary: '#394952',
+        failure: '#ED4B9E',
+        success: '#31D0AA',
+        warning: '#FFB237',
+        tertiary: '#EFF4F5',
+        textSubtle: '#7A6EAA',
+        input: '#eeeaf4',
+        backgroundAlt: '#FFFFFF',
+        disabled: '#E9EAEB',
         yellow: {
           200: '#ffe6cf',
           300: '#fedd15',
@@ -15,6 +27,7 @@ module.exports = {
       textColor: {
         primary: '#ffe6cf',
         secondary: '#485861',
+        disabled: '#BDC2C4',
       },
       keyframes: {
         'slide-down': {
@@ -59,5 +72,25 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addBase, addComponents, addUtilities, theme }) => {
+      addBase({});
+      addComponents({
+        '.example': {
+          backgroundColor: theme('colors.white'),
+          borderRadius: theme('borderRadius.lg'),
+          padding: theme('spacing.6'),
+          boxShadow: theme('boxShadow.xl'),
+        },
+      });
+      addUtilities({
+        '.z-overlay': {
+          zIndex: 19,
+        },
+        '.z-modal': {
+          zIndex: 20,
+        },
+      });
+    }),
+  ],
 };
