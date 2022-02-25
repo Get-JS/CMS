@@ -10,13 +10,11 @@ module.exports = {
       colors: {
         primary: '#485861',
         secondary: '#394952',
-        failure: '#ED4B9E',
+        danger: '#ED4B9E',
         success: '#31D0AA',
         warning: '#FFB237',
         tertiary: '#EFF4F5',
-        textSubtle: '#7A6EAA',
-        input: '#eeeaf4',
-        backgroundAlt: '#FFFFFF',
+        subtle: '#7A6EAA',
         disabled: '#E9EAEB',
         yellow: {
           200: '#ffe6cf',
