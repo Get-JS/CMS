@@ -25,12 +25,50 @@ export const Default = () => {
           </div>
         );
       })}
-      <Button tw="mr-[10px]" disabled>
-        Disabled
-      </Button>
-      <Button variant="secondary" disabled>
-        Disabled
-      </Button>
+      <div tw="mb-[10px]">
+        <Button tw="mr-[10px]" disabled isRound>
+          Disabled
+        </Button>
+        <Button variant="secondary" disabled isRound>
+          Disabled
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+export const Anchors = () => {
+  return (
+    <div>
+      {Object.values(variant).map((variant) => {
+        return (
+          <div key={variant} tw="mb-[10px]">
+            {Object.values(size).map((size) => {
+              return (
+                <Button
+                  as="a"
+                  tw="mr-[10px]"
+                  href="https://www.naver.com"
+                  key={size}
+                  variant={variant}
+                  size={size}
+                  external
+                >
+                  {`${capitalize(variant)} anchor ${size.toUpperCase()}`}
+                </Button>
+              );
+            })}
+          </div>
+        );
+      })}
+      <div tw="mb-[10px]">
+        <Button as="a" href="https://www.naver.com" tw="mr-[8px]" external disabled isRound>
+          Disabled
+        </Button>
+        <Button as="a" href="https://www.naver.com" variant="secondary" external disabled isRound>
+          Disabled
+        </Button>
+      </div>
     </div>
   );
 };
