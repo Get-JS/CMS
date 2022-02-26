@@ -5,7 +5,7 @@ const customWebpackConfig = require('../craco.config.js');
 
 module.exports = {
   stories: ['../src/components/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
-  addons: ['@storybook/addon-essentials', '@storybook/addon-links'],
+  addons: ['@storybook/addon-essentials', '@storybook/addon-a11y', '@storybook/addon-links'],
   babel: async (options) => {
     const { babel } = customWebpackConfig;
     const pluginsPackageNameList = babelOptionFlatName(babel.plugins);
