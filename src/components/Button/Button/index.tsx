@@ -1,21 +1,23 @@
-import React, { cloneElement, ElementType, isValidElement } from 'react';
+import { cloneElement, ElementType, isValidElement } from 'react';
+
+import externalLinkProps from '@/utils/externalLinkProps';
 
 import { ButtonProps } from '../@types';
 import { StyledButton } from './styles';
 
-const Button = <E extends ElementType = 'button'>({
-  startIcon,
-  endIcon,
-  className,
-  isLoading,
-  disabled,
-  children,
-  ...rest
-}: ButtonProps<E>) => {
+/**
+ * Component Generic
+ * @see https://ui.toast.com/weekly-pick/ko_20210505
+ */
+
+const Button = <E extends ElementType = 'button'>(props: ButtonProps<E>) => {
+  const { startIcon, endIcon, external, className, isLoading, disabled, children, ...rest } = props;
+  const internalProps = external ? externalLinkProps() : {};
+
   const isDisabled = isLoading || disabled;
 
   return (
-    <StyledButton className={className} isLoading={isLoading} disabled={isDisabled} {...rest}>
+    <StyledButton className={className} isLoading={isLoading} disabled={isDisabled} {...internalProps} {...rest}>
       <>
         {isValidElement(startIcon) && cloneElement(startIcon)}
         {children}

@@ -35,4 +35,4 @@ export interface BaseButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonEle
   endIcon?: ReactNode;
 }
 
-export type ButtonProps<P extends ElementType = 'button'> = PolymorphicComponentProps<P, BaseButtonProps>;
+export type ButtonProps<E extends ElementType = 'button'> = PolymorphicComponentProps<E, BaseButtonProps>;
