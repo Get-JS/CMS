@@ -50,6 +50,8 @@
     "gitdog",
     "headlessui",
     "heroicons",
+    "noopener",
+    "noreferrer",
     "tailwindcss"
   ],
 }

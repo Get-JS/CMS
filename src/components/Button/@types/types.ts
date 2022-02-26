@@ -25,6 +25,7 @@ export interface BaseButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonEle
   as?: 'a' | 'button' | ElementType;
   className?: string;
   style?: CSSProperties;
+  external?: boolean;
   isRound?: boolean;
   isLoading?: boolean;
   size?: Size;

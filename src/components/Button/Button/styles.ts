@@ -101,7 +101,6 @@ export const StyledButton = styled.button(({ isLoading, size, variant }: BaseBut
     opacity: ${opacityStyle({ isLoading })};
 
     ${disabledStyle({ isLoading })}
-    ${styleVariantStyle.primary}
     ${size && sizeVariantStyle[size]}
     ${variant && styleVariantStyle[variant]}
   `,
