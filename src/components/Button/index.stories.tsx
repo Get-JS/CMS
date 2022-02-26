@@ -62,7 +62,7 @@ export const Anchors = () => {
         );
       })}
       <div tw="mb-[10px]">
-        <Button as="a" href="https://www.naver.com" tw="mr-[8px]" external disabled isRound>
+        <Button as="a" href="https://www.naver.com" tw="mr-[10px]" external disabled isRound>
           Disabled
         </Button>
         <Button as="a" href="https://www.naver.com" variant="secondary" external disabled isRound>

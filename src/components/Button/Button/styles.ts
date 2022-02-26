@@ -3,6 +3,10 @@ import tw, { styled, theme } from 'twin.macro';
 
 import { BaseButtonProps, size, variant } from '../@types/types';
 
+export const buttonClassName = {
+  disable: 'button--disabled',
+};
+
 export const sizeVariantStyle = {
   [size.MD]: {
     height: '48px',
@@ -30,7 +34,7 @@ export const styleVariantStyle = {
     borderColor: theme`colors.primary`,
     boxShadow: 'none',
     color: theme`colors.primary`,
-    ':disabled': {
+    [`:disabled, &.${buttonClassName.disable}`]: {
       backgroundColor: theme`colors.transparent`,
     },
   },
@@ -61,14 +65,14 @@ export const styleVariantStyle = {
 export const disabledStyle = ({ isLoading }: BaseButtonProps) => {
   if (isLoading === true) {
     return `
-      &:disabled {
+      &:disabled, &.${buttonClassName.disable} {
         cursor: not-allowed;
       }
     `;
   }
 
   return `
-    &:disabled {
+    &:disabled, &.${buttonClassName.disable} {
       background-color: ${theme`colors.disabled`};
       border-color: ${theme`colors.disabled`};
       box-shadow: none;
@@ -95,13 +99,13 @@ export const StyledButton = styled.button(({ isRound, isLoading, size, variant }
   css`
     transition: background-color 0.2s, opacity 0.2s;
 
-    &:hover:not(:disabled):not(:active) {
+    &:hover:not(:disabled):not(:active):not(.${buttonClassName.disable}) {
       opacity: 0.65;
     }
 
+    ${disabledStyle({ isLoading })}
     opacity: ${opacityStyle({ isLoading })};
 
-    ${disabledStyle({ isLoading })}
     ${size && sizeVariantStyle[size]}
     ${variant && styleVariantStyle[variant]}
   `,

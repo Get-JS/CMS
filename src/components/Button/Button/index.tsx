@@ -3,7 +3,7 @@ import { cloneElement, ElementType, isValidElement } from 'react';
 import externalLinkProps from '@/utils/externalLinkProps';
 
 import { ButtonProps } from '../@types';
-import { StyledButton } from './styles';
+import { buttonClassName, StyledButton } from './styles';
 
 /**
  * Component Generic
@@ -14,10 +14,21 @@ const Button = <E extends ElementType = 'button'>(props: ButtonProps<E>) => {
   const { startIcon, endIcon, external, className, isLoading, disabled, children, ...rest } = props;
   const internalProps = external ? externalLinkProps() : {};
 
+  const classNames = className ? [className] : [];
   const isDisabled = isLoading || disabled;
 
+  if (isDisabled) {
+    classNames.push(buttonClassName.disable);
+  }
+
   return (
-    <StyledButton className={className} isLoading={isLoading} disabled={isDisabled} {...internalProps} {...rest}>
+    <StyledButton
+      className={classNames.join(' ')}
+      isLoading={isLoading}
+      disabled={isDisabled}
+      {...internalProps}
+      {...rest}
+    >
       <>
         {isValidElement(startIcon) && cloneElement(startIcon)}
         {children}
