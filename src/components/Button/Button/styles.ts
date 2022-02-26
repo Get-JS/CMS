@@ -82,10 +82,11 @@ export const opacityStyle = ({ isLoading = false }: BaseButtonProps) => {
   return isLoading ? '.5' : '1';
 };
 
-export const StyledButton = styled.button(({ isLoading, size, variant }: BaseButtonProps) => [
+export const StyledButton = styled.button(({ isRound, isLoading, size, variant }: BaseButtonProps) => [
   tw`font-size[14px] font-weight[600] letter-spacing[0.03em] line-height[18px]`,
   tw`inline-flex items-center justify-center`,
-  tw`border-0 border-radius[16px]`,
+  tw`border-0`,
+  isRound && tw`border-radius[16px]`,
   tw`padding[10px 15px]`,
   tw`min-h-[38px]`,
 
