@@ -1,3 +1,4 @@
+import IconComponent from './IconComponent';
 import Svg from './Svg';
 
 export default {
@@ -42,4 +43,8 @@ export const Icons = () => {
       })}
     </div>
   );
+};
+
+export const IconNameComponent = () => {
+  return <IconComponent iconName="Search" />;
 };
