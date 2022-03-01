@@ -1,7 +1,10 @@
 import { Global, css } from '@emotion/react';
 import { GlobalStyles as BaseStyles, theme } from 'twin.macro';
 
+import { colorStyle } from './color';
+
 const customStyles = css([
+  colorStyle,
   {
     body: {
       fontFamily:

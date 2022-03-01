@@ -8,14 +8,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#485861',
-        secondary: '#394952',
-        danger: '#ED4B9E',
-        success: '#31D0AA',
-        warning: '#FFB237',
-        tertiary: '#EFF4F5',
-        subtle: '#7A6EAA',
-        disabled: '#E9EAEB',
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        tertiary: 'var(--tertiary)',
+        disabled: 'var(--disabled)',
         yellow: {
           200: '#ffe6cf',
           300: '#fedd15',
@@ -23,9 +19,9 @@ module.exports = {
         },
       },
       textColor: {
-        primary: '#ffe6cf',
-        secondary: '#485861',
-        disabled: '#BDC2C4',
+        primary: 'var(--text-primary)',
+        secondary: 'var(--text-secondary)',
+        disabled: 'var(--text-disabled)',
       },
       keyframes: {
         'slide-down': {
