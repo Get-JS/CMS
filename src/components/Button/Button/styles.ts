@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import tw, { styled, theme } from 'twin.macro';
 
 import { BaseButtonProps, size, variant } from '../@types/types';
@@ -7,7 +6,7 @@ export const buttonClassName = {
   disable: 'button--disabled',
 };
 
-export const sizeVariantStyle = {
+export const sizeVariant = {
   [size.MD]: {
     height: '48px',
     padding: '0 24px',
@@ -23,7 +22,7 @@ export const sizeVariantStyle = {
   },
 };
 
-export const styleVariantStyle = {
+export const styleVariant = {
   [variant.PRIMARY]: {
     backgroundColor: theme`colors.primary`,
     color: theme`textColor.primary`,
@@ -42,18 +41,6 @@ export const styleVariantStyle = {
     backgroundColor: theme`colors.tertiary`,
     boxShadow: 'none',
     color: theme`colors.primary`,
-  },
-  [variant.SUBTLE]: {
-    backgroundColor: theme`colors.subtle`,
-    color: 'white',
-  },
-  [variant.DANGER]: {
-    backgroundColor: theme`colors.danger`,
-    color: 'white',
-  },
-  [variant.SUCCESS]: {
-    backgroundColor: theme`colors.success`,
-    color: 'white',
   },
   [variant.TEXT]: {
     backgroundColor: theme`colors.transparent`,
@@ -82,7 +69,7 @@ export const disabledStyle = ({ isLoading }: BaseButtonProps) => {
   `;
 };
 
-export const opacityStyle = ({ isLoading = false }: BaseButtonProps) => {
+export const opacity = ({ isLoading = false }: BaseButtonProps) => {
   return isLoading ? '.5' : '1';
 };
 
@@ -90,13 +77,10 @@ export const StyledButton = styled.button(({ isRound, isLoading, size, variant }
   tw`font-size[14px] font-weight[600] letter-spacing[0.03em] line-height[18px]`,
   tw`inline-flex items-center justify-center`,
   tw`border-0`,
-  isRound && tw`border-radius[16px]`,
+  isRound && tw`border-radius[8px]`,
   tw`padding[10px 15px]`,
-  tw`min-h-[38px]`,
-
   tw`focus:outline-none`,
-
-  css`
+  `
     transition: background-color 0.2s, opacity 0.2s;
 
     &:hover:not(:disabled):not(:active):not(.${buttonClassName.disable}) {
@@ -104,9 +88,8 @@ export const StyledButton = styled.button(({ isRound, isLoading, size, variant }
     }
 
     ${disabledStyle({ isLoading })}
-    opacity: ${opacityStyle({ isLoading })};
-
-    ${size && sizeVariantStyle[size]}
-    ${variant && styleVariantStyle[variant]}
+    opacity: ${opacity({ isLoading })};
   `,
+  size && sizeVariant[size],
+  variant && styleVariant[variant],
 ]);
