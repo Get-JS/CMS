@@ -1,9 +1,6 @@
-export interface IOverlayProps {
-  className?: string;
-  onClick?: () => void;
-}
+import { OverlayProps } from '../@types';
 
-const Overlay = ({ className = '', onClick }: IOverlayProps) => {
+const Overlay = ({ className = '', onClick }: OverlayProps) => {
   return (
     <div
       role="presentation"

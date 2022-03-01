@@ -1,6 +1,6 @@
 import { PolymorphicComponent } from '@/typings/utils';
 
-import { BaseButtonProps } from '..';
+import { BaseButtonProps } from '../@types';
 import StyledIconButton from './styles';
 
 const IconButton: PolymorphicComponent<BaseButtonProps, 'button'> = (props) => {
