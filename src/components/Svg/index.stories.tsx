@@ -29,18 +29,20 @@ const components = context.keys().reduce((acc, path) => {
 export const Icons = () => {
   return (
     <div tw="flex justify-start items-center flex-wrap">
-      {Object.keys(components).map((file) => {
-        const Icon = components[file].default;
-        return (
-          <div key={file} tw="flex flex-col items-center justify-center w-[128px] h-[96px] border[1px solid #eee]">
-            <div tw="flex items-center justify-center flex-1 h-full">
-              <Icon tw="w-[48px]" />
-              <Icon tw="w-[24px] ml-[4px]" color="secondary" />
+      {Object.keys(components)
+        .filter((file) => file !== 'index')
+        .map((file) => {
+          const Icon = components[file].default;
+          return (
+            <div key={file} tw="flex flex-col items-center justify-center w-[128px] h-[96px] border[1px solid #eee]">
+              <div tw="flex items-center justify-center flex-1 h-full">
+                <Icon tw="w-[48px]" />
+                <Icon tw="w-[24px] ml-[4px]" color="secondary" />
+              </div>
+              <div>{file}</div>
             </div>
-            <div>{file}</div>
-          </div>
-        );
-      })}
+          );
+        })}
     </div>
   );
 };
