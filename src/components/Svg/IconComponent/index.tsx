@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import * as IconModule from '..';
 import { SvgProps } from '../@types';
+import * as IconModule from '../Icons';
 
 const Icons = IconModule as unknown as { [key: string]: FC<SvgProps> };
 
