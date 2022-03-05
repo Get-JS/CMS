@@ -14,6 +14,10 @@ export const sizeVariant = {
       width: '74px',
     },
     checked: tw`translate-x-9`,
+    icon: {
+      height: '25px',
+      width: '25px',
+    },
     handle: {
       height: '34px',
       width: '34px',
@@ -25,6 +29,10 @@ export const sizeVariant = {
       width: '57px',
     },
     checked: tw`translate-x-7`,
+    icon: {
+      height: '20px',
+      width: '20px',
+    },
     handle: {
       height: '26px',
       width: '26px',
@@ -36,6 +44,10 @@ export const sizeVariant = {
       width: '36px',
     },
     checked: tw`translate-x-4`,
+    icon: {
+      height: '13px',
+      width: '13px',
+    },
     handle: {
       height: '16px',
       width: '16px',
