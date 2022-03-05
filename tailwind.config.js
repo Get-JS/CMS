@@ -23,6 +23,11 @@ module.exports = {
         secondary: 'var(--text-secondary)',
         disabled: 'var(--text-disabled)',
       },
+      shadow: {
+        success: 'var(--shadow-success)',
+        warning: 'var(--shadow-warning)',
+        focus: 'var(--shadow-focus)',
+      },
       keyframes: {
         'slide-down': {
           from: {
